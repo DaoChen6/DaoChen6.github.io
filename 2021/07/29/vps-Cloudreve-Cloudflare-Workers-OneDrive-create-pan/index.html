@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+    <head>
+  <!-- 元数据 -->
+  <meta charset="utf-8">
+  <link rel="icon" href="https://cdn.jsdelivr.net/gh/DaoChen6/img@main/logo1.png">
+  <title>运用闲置小鸡+Cloudreve+Cloudflare Workers反代+OneDrive搭建网盘 | 辰漉博客</title>
+  <meta name="author" content="道辰" />
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="robots" content="index,follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="format-detection" content="telphone=no, email=no" />
+  
+    <meta name="keywords" content="Cloudflare, Linux, OneDrive" />
+  
+  <meta name="description" content="前言：闲来无事，碰巧见群里讨论OneDrive，想起了我那空闲的5T空间，于是拿起闲置破烂小鸡用Cloudreve直接搭建了个网盘  一、部署Cloudreve 注：Cloudreve官网 Cloudreve文档  1）去下载Cloudreve，然后传到小鸡 2）tar -xzf解压后chmod +x .&#x2F;cloudreve赋予权限，再.&#x2F;cloudreve启动 这个鸡访问起来是真的慢，所以我就">
+<meta property="og:type" content="article">
+<meta property="og:title" content="运用闲置小鸡+Cloudreve+Cloudflare Workers反代+OneDrive搭建网盘">
+<meta property="og:url" content="https://www.iflu.cf/2021/07/29/vps-Cloudreve-Cloudflare-Workers-OneDrive-create-pan/index.html">
+<meta property="og:site_name" content="辰漉博客">
+<meta property="og:description" content="前言：闲来无事，碰巧见群里讨论OneDrive，想起了我那空闲的5T空间，于是拿起闲置破烂小鸡用Cloudreve直接搭建了个网盘  一、部署Cloudreve 注：Cloudreve官网 Cloudreve文档  1）去下载Cloudreve，然后传到小鸡 2）tar -xzf解压后chmod +x .&#x2F;cloudreve赋予权限，再.&#x2F;cloudreve启动 这个鸡访问起来是真的慢，所以我就">
+<meta property="og:locale">
+<meta property="og:image" content="https://www.iflu.cf/2021/07/29/vps-Cloudreve-Cloudflare-Workers-OneDrive-create-pan/https:/cdn.jsdelivr.net/gh/DaoChen6/img@main/img/20210729205229.png">
+<meta property="article:published_time" content="2021-07-29T12:46:28.000Z">
+<meta property="article:modified_time" content="2021-08-13T01:02:06.252Z">
+<meta property="article:author" content="道辰">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="OneDrive">
+<meta property="article:tag" content="Cloudflare">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.iflu.cf/2021/07/29/vps-Cloudreve-Cloudflare-Workers-OneDrive-create-pan/https:/cdn.jsdelivr.net/gh/DaoChen6/img@main/img/20210729205229.png">
+<meta name="twitter:site" content="@IFLU10">
+  
+  <!-- 站点验证相关 -->
+  
+    
+    
+    
+  
+  <!-- 样式表文件 -->
+  <link rel="stylesheet" id="kratos-css" href="/css/kratosr.min.css" type="text/css" media="all">
+  
+    <link rel="stylesheet" id="highlight-css" href="/css/highlight/night-eighties.min.css" type="text/css" media="all">
+  
+  
+  <link rel="stylesheet" id="fontawe-css" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" type="text/css" media="all">
+  <link rel="stylesheet" id="nprogress-css" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" type="text/css" media="all">
+  
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+  
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  
+  
+    <link rel="stylesheet" id="darkmode-css" href="/css/kr-dark.min.css" type="text/css" media="all">
+  
+  <!-- 不得不预先加载的一些JS文件 -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+  
+    <script src="https://cdn.jsdelivr.net/npm/qrcode_js@1.0.0/qrcode.min.js"></script>
+  
+  
+  <style>
+    
+      .kratos-cover.kratos-cover-2 {
+        background-image: url('https://cdn.jsdelivr.net/gh/DaoChen6/img@main/banner.webp');
+      }
+    
+    
+      @media(min-width:768px) {
+        body.custom-background {
+          background-image: url('https://cdn.jsdelivr.net/gh/DaoChen6/img@main/bg.webp');
+        }
+      }
+    
+  </style>
+  
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="辰漉博客" type="application/atom+xml">
+</head>
+
+
+    <body class="custom-background">
+        <div id="kratos-wrapper">
+    <div id="kratos-page">
+        <div id="kratos-header">
+            <header id="kratos-desktop-topnav" class="kratos-topnav">
+                <div class="container">
+                    <div class="nav-header">
+                        <nav id="kratos-menu-wrap">
+                            <ul id="kratos-primary-menu" class="sf-menu">
+                                
+                                    
+                                        <li><a href="/"><i class="fa fa-home"></i>首页</a></li>
+                                    
+                                
+                                    
+                                        <li><a href="/archives/"><i class="fa fa-file"></i>档案馆</a></li>
+                                    
+                                
+                                    
+                                        <li><a href="/friends/"><i class="fa fa-paw"></i>好伙伴</a></li>
+                                    
+                                
+                                    
+                                        <li><a target="_blank" rel="noopener" href="https://up.iflu.cf/"><i class="fa fa-tachometer"></i>辰漉云监控</a></li>
+                                    
+                                
+                                    
+                                        <li>
+                                            <a><i class="fa fa-link"></i>链接</a>
+                                            <ul class="sub-menu">
+                                                
+                                                    
+                                                
+                                                    
+                                                        <li><a href="https://www.iflu.cf">作者博客</a></li>
+                                                    
+                                                
+                                            </ul>
+                                        </li>
+                                    
+                                
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+            <header id="kratos-mobile-topnav" class="kratos-topnav">
+                <div class="container">
+                    <div class="color-logo"><a href="/">辰漉博客</a></div>
+                    <div class="nav-toggle">
+                        <a class="kratos-nav-toggle js-kratos-nav-toggle">
+                            <i></i>
+                        </a>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <div class="kratos-start kratos-hero-2">
+            <!-- <div class="kratos-overlay"></div> -->
+            <div class="kratos-cover kratos-cover-2 text-center">
+                <div class="desc desc2 animate-box">
+                    <a href="/">
+                        <h2>辰漉博客</h2> <br />
+                        <span>努力演好自己的剧本</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="kratos-blog-post">
+            <div class="container">
+                <div id="main" class="row">
+                    
+
+        
+
+            <section class="col-md-8">
+
+        
+
+            <article>
+    <div class="kratos-hentry kratos-post-inner clearfix">
+        <header class="kratos-entry-header">
+            
+                <h1 class="kratos-entry-title text-center">运用闲置小鸡+Cloudreve+Cloudflare Workers反代+OneDrive搭建网盘</h1>
+            
+            
+            <ul class="kratos-post-meta text-center">
+                <li><i class="fa fa-calendar"></i> 2021-07-29</li>
+                <li><i class="fa fa-user"></i> 作者 道辰</li>
+                <li>
+                    <i class="fa fa-edit"></i> 
+                    
+                    
+                        1164
+                    
+                    字
+                </li>
+                
+                    <li id="/2021/07/29/vps-Cloudreve-Cloudflare-Workers-OneDrive-create-pan/" class="leancloud_visitors" data-flag-title="运用闲置小鸡+Cloudreve+Cloudflare Workers反代+OneDrive搭建网盘">
+                        <i class="fa fa-eye"></i>
+                        <span class="leancloud-visitors-count"> </span> 次阅读
+                    </li>
+                    
+                        <li>
+                            <i class="fa fa-commenting-o"></i>
+                            <span data-xid="/2021/07/29/vps-Cloudreve-Cloudflare-Workers-OneDrive-create-pan/" class="waline-comment-count"> </span> 条评论
+                        </li>
+                    
+                
+            </ul>
+        </header>
+        <div class="kratos-post-content">
+            <div id="expire-alert" class="alert alert-warning hidden" role="alert">
+                本文最后编辑于 <time datetime="1628816526252"></time> 前，其中的内容可能需要更新。
+            </div>
+            
+                <div class="kratos-post-inner-toc">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E9%83%A8%E7%BD%B2Cloudreve"><span class="toc-number">1.</span> <span class="toc-text">一、部署Cloudreve</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E9%85%8D%E7%BD%AECloudreve%E4%B8%8ECloudflare-Workers"><span class="toc-number">2.</span> <span class="toc-text">二、配置Cloudreve与Cloudflare Workers</span></a></li></ol>
+                </div>
+            
+            <hr />
+            <blockquote>
+<p>前言：闲来无事，碰巧见群里讨论OneDrive，想起了我那空闲的5T空间，于是拿起闲置破烂小鸡用Cloudreve直接搭建了个网盘</p>
+</blockquote>
+<h1 id="一、部署Cloudreve"><a href="#一、部署Cloudreve" class="headerlink" title="一、部署Cloudreve"></a>一、部署Cloudreve</h1><blockquote>
+<p>注：<a target="_blank" rel="noopener" href="https://cloudreve.org/">Cloudreve官网</a> <a target="_blank" rel="noopener" href="https://docs.cloudreve.org/">Cloudreve文档</a></p>
+</blockquote>
+<p>1）去下载Cloudreve，然后传到小鸡</p>
+<p>2）<code>tar -xzf</code>解压后<code>chmod +x ./cloudreve</code>赋予权限，再<code>./cloudreve</code>启动</p>
+<p>这个鸡访问起来是真的慢，所以我就想用Cloudflare Workers反代一下</p>
+<h1 id="二、配置Cloudreve与Cloudflare-Workers"><a href="#二、配置Cloudreve与Cloudflare-Workers" class="headerlink" title="二、配置Cloudreve与Cloudflare Workers"></a>二、配置Cloudreve与Cloudflare Workers</h1><blockquote>
+<p>我为什么要用cloudflare workers反代而不是直接在小鸡上配置？因为小鸡是纯ipv6的鸡，没有ipv4，而且刚刚说了小鸡是真的真的很卡</p>
+</blockquote>
+<p>1）添加个域名到cf</p>
+<p>2）解析三条域名记录到小鸡（一条随意名称用于反代，另两个是@与www）</p>
+<p>3）在cf控制台打开cloudflare workers</p>
+<p><img src="https://cdn.jsdelivr.net/gh/DaoChen6/img@main/img/20210729211900.png" alt="image-20210729211619711"></p>
+<p>4）创建Workers，填写以下脚本代码</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">addEventListener(</span><br><span class="line">  <span class="string">&quot;fetch&quot;</span>,<span class="function"><span class="params">event</span> =&gt;</span> &#123;</span><br><span class="line">     <span class="keyword">let</span> url=<span class="keyword">new</span> URL(event.request.url);</span><br><span class="line">     url.hostname=<span class="string">&quot;用于反代的域名&quot;</span>;</span><br><span class="line">     <span class="keyword">let</span> request=<span class="keyword">new</span> Request(url,event.request);</span><br><span class="line">     event. respondWith(</span><br><span class="line">       fetch(request)</span><br><span class="line">     )</span><br><span class="line">  &#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+
+
+<p>5）打开域名控制台，——&gt;<code>SSL/TLS</code>——&gt;<code>源服务器</code>——&gt;<code>创建证书</code>，创建完证书后将证书和密钥保存为<code>.pem</code>和<code>.key</code>文件上传至小鸡</p>
+<p><img src="https://cdn.jsdelivr.net/gh/DaoChen6/img@main/img/20210729212119.png" alt="image-20210729212119283"></p>
+<p>6）修改Cloudreve端口和配置SSL证书</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim conf.ini</span><br></pre></td></tr></table></figure>
+
+<p>1.将监听端口改为80</p>
+<p>2.添加以下代码，修改<code>.pem</code>与<code>.key</code>文件路径</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[SSL]</span><br><span class="line">Listen = :<span class="number">443</span></span><br><span class="line">CertPath = .pem文件路径</span><br><span class="line">KeyPath = .key文件路径</span><br></pre></td></tr></table></figure>
+
+
+
+<p>7）在域名控制台下打开Workers，添加路由</p>
+<p><img src="https://cdn.jsdelivr.net/gh/DaoChen6/img@main/img/20210729212835.png" alt="image-20210729212835722"></p>
+<p>如以下所示，Worker即<code>4）</code>添加的Workers</p>
+<p><img src="https://cdn.jsdelivr.net/gh/DaoChen6/img@main/img/20210729212932.png" alt="image-20210729212932682"></p>
+<p>这样就搭建好了网盘，速度稍微有所改善</p>
+<p>三、配置网盘储存</p>
+<p>打开网盘后台，添加储存策略</p>
+<p>按照提示走就可以配置完OneDrive存储，最后别忘了设置用户组的存储策略</p>
+<blockquote>
+<p>如果说用的是OneDrive国际版，上传下载感觉慢的话可自行设立OneDrive 反代服务器，速度会稍微改善</p>
+<p>但使用Cloudflare反代的话，本人实测，效果反而会更差</p>
+<p>如果有更好的提速OneDrive国际版速度的话可以请在下方留言告诉我，非常感谢！</p>
+</blockquote>
+
+        </div>
+        
+            <div class="kratos-copyright text-center clearfix">
+                <h5>本作品采用 <a rel="license nofollow" target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh">知识共享署名-相同方式共享 4.0 国际许可协议</a> 进行许可</h5>
+            </div>
+        
+        <footer class="kratos-entry-footer clearfix">
+            
+                <div class="post-like-donate text-center clearfix" id="post-like-donate">
+                
+                
+                    <a class="share" href="javascript:;"><i class="fa fa-share-alt"></i> 分享</a>
+                    <div class="share-wrap" style="display: none;">
+    <div class="share-group">
+        <a href="javascript:;" class="share-plain qq" onclick="share('qq');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-qq"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain qzone" onclick="share('qzone');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-star"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain weixin pop style-plain" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-weixin"></i>
+            </div>
+            <div class="share-int">
+                <div class="qrcode" id="wechat-qr"></div>
+                <p>打开微信“扫一扫”，打开网页后点击屏幕右上角分享按钮</p>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain weibo" onclick="share('weibo');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-weibo"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain facebook style-plain" onclick="share('facebook');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-facebook"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain twitter style-plain" onclick="share('twitter');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-twitter"></i>
+            </div>
+        </a>
+    </div>
+    <script type="text/javascript">
+        $(()=>{
+            new QRCode("wechat-qr", {
+                text: "https://www.iflu.cf/2021/07/29/vps-Cloudreve-Cloudflare-Workers-OneDrive-create-pan/",
+                width: 150,
+                height: 150,
+                correctLevel : QRCode.CorrectLevel.H
+            });
+        });
+        function share(dest) {
+            const qqBase        = "https://connect.qq.com/widget/shareqq/index.html?";
+            const weiboBase     = "https://service.weibo.com/share/share.php?";
+            const qzoneBase     = "https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?";
+            const facebookBase  = "https://www.facebook.com/sharer/sharer.php?";
+            const twitterBase   = "https://twitter.com/intent/tweet?";
+            const hostUrl       = "https://www.iflu.cf/2021/07/29/vps-Cloudreve-Cloudflare-Workers-OneDrive-create-pan/";
+            const title         = "「运用闲置小鸡+Cloudreve+Cloudflare Workers反代+OneDrive搭建网盘」";
+            const excerpt       = `
+前言：闲来无事，碰巧见群里讨论OneDrive，想起了我那空闲的5T空间，于是拿起闲置破烂小鸡用Cloudreve直接搭建了个网盘
+
+一、部署Cloudreve
+注：Cloudreve官网 Cloudreve文档
+
+1）去下载Clo...`;
+            let _URL;
+            switch (dest) {
+                case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
+                case "weibo"    : _URL = weiboBase+"url="+hostUrl+"&title="+title+excerpt;                                 break;
+                case "qzone"    : _URL = qzoneBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";  break;
+                case "facebook" : _URL = facebookBase+"u="+hostUrl;                                                        break;
+                case "twitter"  : _URL = twitterBase+"text="+title+excerpt+"&url="+hostUrl;                                break;
+            }
+            window.open(_URL);
+        };
+    </script>
+</div>
+                
+                </div>
+            
+            <div class="footer-tag clearfix">
+                <div class="pull-left">
+                <i class="fa fa-tags"></i>
+                    <a class="tag-none-link" href="/tags/Cloudflare/" rel="tag">Cloudflare</a>, <a class="tag-none-link" href="/tags/Linux/" rel="tag">Linux</a>, <a class="tag-none-link" href="/tags/OneDrive/" rel="tag">OneDrive</a>
+                </div>
+                <div class="pull-date">
+                <span>最后编辑：2021-08-13</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+        <nav class="navigation post-navigation clearfix" role="navigation">
+            
+            <div class="nav-previous clearfix">
+                <a title=" EUserv免费VPS配置V2ray+WS+TLS+Cloudflare科学上网" href="/2021/07/08/EUserv-free-VPS-install-V2ray-WS-TLS-Cloudflare/">&lt; 上一篇</a>
+            </div>
+            
+            
+            <div class="nav-next clearfix">
+                <a title=" 日本阴间奥运会骚操作！奥林匹克精神没见到，抗日精神倒是给我唤醒了！" href="/2021/07/29/rubbish-Japan-olympics-no-olympics-spirit-but-have-anti-Japanese-spirit/">下一篇 &gt;</a>
+            </div>
+            
+        </nav>
+    
+    
+        <div id="w-comments" class="post-comments"></div>
+<script>
+    var load_comm = () => {
+        const init = () => {
+            new Waline(Object.assign({
+                el: '#w-comments',
+                path: '/2021/07/29/vps-Cloudreve-Cloudflare-Workers-OneDrive-create-pan/'
+            }, JSON.parse('{"serverURL":"https://comment.iflu.cf/","visitor":true}')));
+        }
+        if (typeof Waline == 'undefined') {
+            const src = 'https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js';
+            $.getScript(src, init);
+        } else {
+            init();
+        }
+    };
+</script>
+<noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="https://waline.js.org/">comments powered by Waline.</a></noscript>
+
+    
+</article>
+
+        
+
+            </section>
+
+        
+
+                
+            
+
+<section id="kratos-widget-area" class="col-md-4 hidden-xs hidden-sm">
+    <!-- 文章和页面根据splitter来分割，没有的话就从头开始设置为sticky -->
+    
+    
+                <aside id="krw-about" class="widget widget-kratos-about clearfix">
+    <div class="photo-background"></div>
+    <div class="photo-wrapper clearfix">
+        <div class="photo-wrapper-tip text-center">
+            <img class="about-photo" src="http://q1.qlogo.cn/g?b=qq&amp;nk=1959947572&amp;s=640" />
+        </div>
+    </div>
+    <div class="textwidget">
+        <p class="text-center">多点自知之明，少点自作多情。</p>
+    </div>
+</aside>
+            
+                    <div class="sticky-area">
+                
+                    <aside id="krw-toc" class="widget widget-kratos-toc clearfix">
+    <div class="photo-background"></div>
+    <h4 class="widget-title no-after">
+        <i class="fa fa-compass"></i>
+        文章目录
+        <span class="toc-progress-bar"></span>
+    </h4>
+    <div class="textwidget">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E9%83%A8%E7%BD%B2Cloudreve"><span class="toc-text">一、部署Cloudreve</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E9%85%8D%E7%BD%AECloudreve%E4%B8%8ECloudflare-Workers"><span class="toc-text">二、配置Cloudreve与Cloudflare Workers</span></a></li></ol>
+    </div>
+</aside>
+                
+                
+  <aside id="krw-categories" class="widget widget-kratos-categories clearfix">
+    <h4 class="widget-title"><i class="fa fa-folder"></i>分类目录</h4>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%9C%A8%E7%BA%BF%E9%BC%93%E6%8D%A3/">在线鼓捣</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%9C%A8%E7%BA%BF%E9%BC%93%E6%8D%A3/Linux/">Linux</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%9C%A8%E7%BA%BF%E9%BC%93%E6%8D%A3/VPS/">VPS</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BA%94%E7%94%A8%E6%8E%A8%E8%8D%90/">应用推荐</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%9F%E6%B4%BB%E6%83%85%E6%84%9F/">生活情感</a><span class="category-list-count">1</span></li></ul>
+  </aside>
+
+
+            
+                
+  <aside id="krw-tags" class="widget widget-kratos-tags clearfix">
+    <h4 class="widget-title"><i class="fa fa-tags"></i>标签聚合</h4>
+      <div class="tag-clouds">
+        <a href="/tags/Cloudflare/" style="font-size: 0.6em;">Cloudflare</a> <a href="/tags/FL-Studio/" style="font-size: 0.6em;">FL Studio</a> <a href="/tags/Linux/" style="font-size: 0.8em;">Linux</a> <a href="/tags/OneDrive/" style="font-size: 0.6em;">OneDrive</a> <a href="/tags/Telegram/" style="font-size: 0.6em;">Telegram</a> <a href="/tags/V2ray/" style="font-size: 0.6em;">V2ray</a> <a href="/tags/appnode/" style="font-size: 0.6em;">appnode</a> <a href="/tags/php/" style="font-size: 0.6em;">php</a> <a href="/tags/%E5%85%8D%E8%B4%B9VPS/" style="font-size: 0.6em;">免费VPS</a> <a href="/tags/%E5%A5%A5%E8%BF%90%E4%BC%9A/" style="font-size: 0.6em;">奥运会</a> <a href="/tags/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C/" style="font-size: 0.6em;">我的世界</a> <a href="/tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/" style="font-size: 0.6em;">科学上网</a> <a href="/tags/%E7%BC%96%E6%9B%B2/" style="font-size: 0.6em;">编曲</a>
+      </div>
+  </aside>
+
+            
+                
+  <aside id="krw-posts" class="widget widget-kratos-posts">
+  <h4 class="widget-title"><i class="fa fa-file"></i>最新文章</h4>
+  <div class="tab-content">
+      <ul class="list-group">
+        
+        
+          
+          
+            <a class="list-group-item" href="/2021/08/13/5-replace-fl-studio/"><i class="fa  fa-book"></i> 5个在Linux中代替FL Studio的编曲软件</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2021/07/29/rubbish-Japan-olympics-no-olympics-spirit-but-have-anti-Japanese-spirit/"><i class="fa  fa-book"></i> 日本阴间奥运会骚操作！奥林匹克精神没见到，抗日精神倒是给我唤醒了！</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2021/07/29/vps-Cloudreve-Cloudflare-Workers-OneDrive-create-pan/"><i class="fa  fa-book"></i> 运用闲置小鸡+Cloudreve+Cloudflare Workers反代+OneDrive搭建网盘</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2021/07/08/EUserv-free-VPS-install-V2ray-WS-TLS-Cloudflare/"><i class="fa  fa-book"></i> EUserv免费VPS配置V2ray+WS+TLS+Cloudflare科学上网</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2021/07/05/Ubuntu-create-Minecraft-Bedrock-Edition/"><i class="fa  fa-book"></i> Ubuntu搭建我的世界基岩版</a>
+            
+          
+        
+          
+            
+          
+            
+      </ul>
+  </div>
+  </aside>
+
+            
+    </div>
+</section>
+        
+        </div>
+    </div>
+</div>
+<footer>
+    <div id="footer"  class="ap-lrc"  >
+        <div class="kr-tool text-center">
+            <div class="tool">
+                
+                    <div class="box search-box">
+                        <a href="/search/">
+                            <span class="fa fa-search"></span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="box theme-box" id="darkmode-switch">
+                        <span class="fa fa-adjust"></span>
+                    </div>
+                
+                
+            </div>
+            <div class="box gotop-box">
+                <span class="fa fa-chevron-up"></span>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 footer-list text-center">
+                    <ul class="kratos-social-icons">
+                        
+                        
+                        <li><a target="_blank" rel="nofollow" href="https://t.me/iIofm"><i class="fa fa-telegram"></i></a></li>
+                        <li><a target="_blank" rel="nofollow" href="https://twitter.com/IFLU10"><i class="fa fa-twitter"></i></a></li>
+                        
+                        
+                        
+                        <li><a target="_blank" rel="nofollow" href="https://github.com/DaoChen6"><i class="fa fa-github"></i></a></li>
+                        
+                    </ul>
+                    <ul class="kratos-copyright">
+                        <div>
+                            <li>&copy; 2021 辰漉博客 版权所有.</li>
+                            <li>本站已运行<span id="span_dt">Loading...</span></li>
+                        </div>
+                        <div>
+                            <li>Theme <a href="https://github.com/Candinya/Kratos-Rebirth" target="_blank">Kratos:Rebirth</a></li>
+                            <li>Site built with&nbsp;<i class="fa fa-heart throb" style="color:#d43f57"></i>&nbsp;by 道辰.</li>
+                        </div>
+                        <div>
+                            <li>Powered by <a href="https://hexo.io" target="_blank" rel="nofollow">Hexo</a></li>
+                            <li>Hosted on <!--a href="https://github.io" target="_blank">Github Pages</a--></li>
+                        </div>
+                        <div>
+                            
+                            
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
+</div>
+
+        <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.4/dist/js/bootstrap.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.js"></script>
+<script>const notMobile = (!(navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)));</script>
+
+
+    <script async src="/js/candy.min.js"></script>
+
+
+
+    <script defer src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+    <meting-js
+        server="netease"
+        type="playlist"
+        id="6842336127"
+        order="random"
+        fixed="true"
+    >
+    </meting-js>
+
+
+
+    <script defer src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
+<script defer src="/js/kratosr.min.js"></script>
+<script defer src="/js/pjax.min.js"></script>
+
+
+    <script defer src="/js/kr-dark.min.js"></script>
+
+<script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1280078308'%3E%3C/span%3E%3Cscript src='https://s4.cnzz.com/z_stat.php%3Fid%3D1280078308%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+
+<!-- Extra support for third-party plguins  -->
+
+
+    </body>
+</html>

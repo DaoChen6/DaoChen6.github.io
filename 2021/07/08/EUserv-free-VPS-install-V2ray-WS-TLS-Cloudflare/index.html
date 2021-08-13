@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+    <head>
+  <!-- 元数据 -->
+  <meta charset="utf-8">
+  <link rel="icon" href="https://cdn.jsdelivr.net/gh/DaoChen6/img@main/logo1.png">
+  <title>EUserv免费VPS配置V2ray+WS+TLS+Cloudflare科学上网 | 辰漉博客</title>
+  <meta name="author" content="道辰" />
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="robots" content="index,follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="format-detection" content="telphone=no, email=no" />
+  
+    <meta name="keywords" content="V2ray, 免费VPS, 科学上网" />
+  
+  <meta name="description" content="有东西被加密了, 请输入密码查看.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="EUserv免费VPS配置V2ray+WS+TLS+Cloudflare科学上网">
+<meta property="og:url" content="https://www.iflu.cf/2021/07/08/EUserv-free-VPS-install-V2ray-WS-TLS-Cloudflare/index.html">
+<meta property="og:site_name" content="辰漉博客">
+<meta property="og:description" content="有东西被加密了, 请输入密码查看.">
+<meta property="og:locale">
+<meta property="og:image" content="https://www.iflu.cf/2021/07/08/EUserv-free-VPS-install-V2ray-WS-TLS-Cloudflare/https:/cdn.jsdelivr.net/gh/DaoChen6/img@main/img/20210729203246.png">
+<meta property="article:published_time" content="2021-07-08T01:41:18.000Z">
+<meta property="article:modified_time" content="2021-08-13T01:01:21.574Z">
+<meta property="article:author" content="道辰">
+<meta property="article:tag" content="科学上网">
+<meta property="article:tag" content="V2ray">
+<meta property="article:tag" content="免费VPS">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.iflu.cf/2021/07/08/EUserv-free-VPS-install-V2ray-WS-TLS-Cloudflare/https:/cdn.jsdelivr.net/gh/DaoChen6/img@main/img/20210729203246.png">
+<meta name="twitter:site" content="@IFLU10">
+  
+  <!-- 站点验证相关 -->
+  
+    
+    
+    
+  
+  <!-- 样式表文件 -->
+  <link rel="stylesheet" id="kratos-css" href="/css/kratosr.min.css" type="text/css" media="all">
+  
+    <link rel="stylesheet" id="highlight-css" href="/css/highlight/night-eighties.min.css" type="text/css" media="all">
+  
+  
+  <link rel="stylesheet" id="fontawe-css" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" type="text/css" media="all">
+  <link rel="stylesheet" id="nprogress-css" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" type="text/css" media="all">
+  
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+  
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  
+  
+    <link rel="stylesheet" id="darkmode-css" href="/css/kr-dark.min.css" type="text/css" media="all">
+  
+  <!-- 不得不预先加载的一些JS文件 -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+  
+    <script src="https://cdn.jsdelivr.net/npm/qrcode_js@1.0.0/qrcode.min.js"></script>
+  
+  
+  <style>
+    
+      .kratos-cover.kratos-cover-2 {
+        background-image: url('https://cdn.jsdelivr.net/gh/DaoChen6/img@main/banner.webp');
+      }
+    
+    
+      @media(min-width:768px) {
+        body.custom-background {
+          background-image: url('https://cdn.jsdelivr.net/gh/DaoChen6/img@main/bg.webp');
+        }
+      }
+    
+  </style>
+  
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="辰漉博客" type="application/atom+xml">
+</head>
+
+
+    <body class="custom-background">
+        <div id="kratos-wrapper">
+    <div id="kratos-page">
+        <div id="kratos-header">
+            <header id="kratos-desktop-topnav" class="kratos-topnav">
+                <div class="container">
+                    <div class="nav-header">
+                        <nav id="kratos-menu-wrap">
+                            <ul id="kratos-primary-menu" class="sf-menu">
+                                
+                                    
+                                        <li><a href="/"><i class="fa fa-home"></i>首页</a></li>
+                                    
+                                
+                                    
+                                        <li><a href="/archives/"><i class="fa fa-file"></i>档案馆</a></li>
+                                    
+                                
+                                    
+                                        <li><a href="/friends/"><i class="fa fa-paw"></i>好伙伴</a></li>
+                                    
+                                
+                                    
+                                        <li><a target="_blank" rel="noopener" href="https://up.iflu.cf/"><i class="fa fa-tachometer"></i>辰漉云监控</a></li>
+                                    
+                                
+                                    
+                                        <li>
+                                            <a><i class="fa fa-link"></i>链接</a>
+                                            <ul class="sub-menu">
+                                                
+                                                    
+                                                
+                                                    
+                                                        <li><a href="https://www.iflu.cf">作者博客</a></li>
+                                                    
+                                                
+                                            </ul>
+                                        </li>
+                                    
+                                
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+            <header id="kratos-mobile-topnav" class="kratos-topnav">
+                <div class="container">
+                    <div class="color-logo"><a href="/">辰漉博客</a></div>
+                    <div class="nav-toggle">
+                        <a class="kratos-nav-toggle js-kratos-nav-toggle">
+                            <i></i>
+                        </a>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <div class="kratos-start kratos-hero-2">
+            <!-- <div class="kratos-overlay"></div> -->
+            <div class="kratos-cover kratos-cover-2 text-center">
+                <div class="desc desc2 animate-box">
+                    <a href="/">
+                        <h2>辰漉博客</h2> <br />
+                        <span>努力演好自己的剧本</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="kratos-blog-post">
+            <div class="container">
+                <div id="main" class="row">
+                    
+
+        
+
+            <section class="col-md-8">
+
+        
+
+            <article>
+    <div class="kratos-hentry kratos-post-inner clearfix">
+        <header class="kratos-entry-header">
+            
+                <h1 class="kratos-entry-title text-center">EUserv免费VPS配置V2ray+WS+TLS+Cloudflare科学上网</h1>
+            
+            
+            <ul class="kratos-post-meta text-center">
+                <li><i class="fa fa-calendar"></i> 2021-07-08</li>
+                <li><i class="fa fa-user"></i> 作者 道辰</li>
+                <li>
+                    <i class="fa fa-edit"></i> 
+                    
+                    
+                        ~4.00K
+                    
+                    字
+                </li>
+                
+                    <li id="/2021/07/08/EUserv-free-VPS-install-V2ray-WS-TLS-Cloudflare/" class="leancloud_visitors" data-flag-title="EUserv免费VPS配置V2ray+WS+TLS+Cloudflare科学上网">
+                        <i class="fa fa-eye"></i>
+                        <span class="leancloud-visitors-count"> </span> 次阅读
+                    </li>
+                    
+                        <li>
+                            <i class="fa fa-commenting-o"></i>
+                            <span data-xid="/2021/07/08/EUserv-free-VPS-install-V2ray-WS-TLS-Cloudflare/" class="waline-comment-count"> </span> 条评论
+                        </li>
+                    
+                
+            </ul>
+        </header>
+        <div class="kratos-post-content">
+            <div id="expire-alert" class="alert alert-warning hidden" role="alert">
+                本文最后编辑于 <time datetime="1628816481574"></time> 前，其中的内容可能需要更新。
+            </div>
+            
+            <hr />
+            <div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="0789535714714ea7b1d5b1fc032d001de5554929de60420ad146280863f21cca">d9aa7ecf8052469413b97bb34db4a55ad8683095e66cd3fce564b0ca935ffe5abe276c71036fa2a6aee07fff15e68d87d6f49414f7b6ca7427992712f9ef61881cd9f414b751b2dc08fd07445898a0450ad5c7fcec8a1dbf799441fc4a88d58ba0eebc73b105c302414638ca484bd203040acc42244049d0516f71eb78d4f2023c71ee4225a0bb53db14900ce81a426c033cbb15c3ad6b3fa103175c50c2df27aaba3a38f0db3c8f6f056ab9e2c3efa7d5775b4147de06f4604731c9748ca9b88c16f1a3f176f2145056a0ec3cadf76776ba08db75bcfa846a992e95159c8b21e3a2c816589f4005669a3b27f65994309a03469a3b9f476e6a38ac3a401c9e55d988e36bf15ce95bcc0ef5c639cf0f6e481ed96a59e1238cd20123ba12ebe9f58d90e29e17c31ba8ef6c4583e35f8012f3407d32e893d4114777ee850bee72fda86299af8014bbb9921235d5a37e077f56e5df3df50916c836160230785362e0a3a98ac930a503de0353b5d87051d9711469e7fd0ff880667b490508c01c6b53022ee93a5f23f981eb802dd51de120417189fa27573f97fd19761e3fcfc3e6a14ba2f5618a0db93fa3ab4c3b42a8448ad4f3f756cd83de9755091efa26dc244b7a938d8f0527fe0db086aa0f8d16a1a94289ae41981be41c5623643e612f87a85498bf9cb4857207d1c6a92ffe99c3c5ae65c936dad5d9b7978c9e51d73a21005d8b082dc7c45e135aeaeebad5945f424e113508410bda8f91abac519d5aeb7a125f98d58619ab40a02521312fb940574a2c1bcc9cb82c8a41defa4e62e94989c7097354dbc4f67ce51541a7fd374a8c05cc0b1995cb145ebe3dfe5631af26b7a1a2c75846ce4e735ea2b6e7fd9aeaabfa482021e4c295e26c7fbcaddb206a72635c1ef5bfb8e028754e6a50eb0dd25547ff35cf0cda9c160fd9dc3617166f426efb66e47ca53e3a8de7104eddd43063451d649cadda97d4c82626b8dfeed198e5855f0a0b382133d834e0714885ff4c6c89a6ec1977b9779ffc9dd46f21f7135a010001dd04537f3e719bc2cd6d97074fd104a4c58926f1dbe37522860a620f2512daec54033f43e257e2d837b299f8bed3180bda8ae5859fdce18444063a7e649180c7711e8c10ead7edba1a88c121bd00cbb1c12779b7a82c08012a4f5ff3e99f66d3282f4f86a42c621b930333210b83ef6ceaf3ac7836de0e26f3d6f868d6ed640a48c23c917e278ab42d1e312811d337f43c6c10fe96d0281a69028a3fd6b6a82f94f67c434022e82a3ee2a72627e23ada2babefe3ae85f5ac9777ffc1c423e9e36d41a1d3e43590715a35832e54087dddf0763dde3dd29c4620e3d60fd8eff3bb61492382bb4be135e16fe3f9c4632acf7d1f1ca91571cdb674926f70ee2e7ef561391c77a739e17fb8fe5ced5fa927c8d58f6cde6acb218fefd0359b14333eb5dc96eab0b07644f115dec8ff35215cca2421d9693482642c4d5f55dda64a9bd6e5f61162b1612d764317148179849c89d056226b46653260d1f4825e04904649c4df25ce3cadecfde644015fdf5635c63075d2309af280ed6ed552a83c5a26b5c0826cb334d5455f99d1be7552f6a813f5b4676c5738e2b3ad6edf918870f229214d5510c570e2332d6263a63c711935c12e342cc9b2053bfaf983eed8000941cc330a804e2c7ffec5cd4d6fbf1a99fa18782f37bfd097278c6790956c8b5d8beb84d8b3693810b54a5b8f2b07eaf576464ef602dcf80caf2af5bdbfe8d79190a0d3e5b7bd2199337566afe53e5f3ec035aa397a9788fe667bae5b505a4b39b0e50fe6611d90a139a95db9c6280fc34042b897d56007b37d76cd35b7be390d3397b1a3ba51c76b6578936d58acf42b5c6cda9ddda9f40503ae57445fc1245761c6f6881ce1eafd6a703c3c317f7ef833525c833c75962a3593329f37498ddbebb5e4fb48b69c73b238d250c550f657be5e03e2d72f2547537a4039fcdefab4ae6cc46f686bcb711527a02a85ba5f97233a8790929fb2261e033f99f18da029a24125bc3e7ea1bc48d91eb7be6b0d79393c5c7abc5f59e92705131f541fb0e80f63b6ffcc8946f00da7dce21715b6c8c61ac9d5079dd39df58cb35d297008f6a29f6a3d98268d1bb76d076798130936a2560d52a73d9ece250128d99d1582e9e1d881ac1af82a4bd54038dfa1de0583eedf8bf8e668637f7a27ecd2e9afb081f3ec42358b2cc50e08d6fc4d11b1fde572cba550fbde2fdf88e5dface0001d9c875aef6373ba21a80a55feda42628dfec70574bbea733619ef996e2c664979f68d8706f5786ecc3e30c41379f5b8159dac927864c96bfc02ec353137027e418af037ec9f090147c3f8a4bc20af558994998bb760a59dcc4070965ae4c973105053c972ebd060101357902831433378db07a49b62662da57c14ec101d7c403cb9b872023bb67d5cf3c45705bab9e7dc96743d27a9d9fa7040a74f1fc300659508f82e45c16814a25d8e04aa93bdeaa37f77f628adb4bb3d8f85f482292b8ef7e02dfa7a6ae3e5c77abc8a79c1b417434ae27c38656b9f8b8caf3dcc0d25e59d7ed730c66d5e2d0a51edfa74b24ecf1600757c0f0ec39b3fb0fd2c253aea8f425ad06c3bccd18648b2b83308558281e62ac57f266370553983162285644ea548d5539ef38f739323d8647c304ecc9fe7f14118bd02c0f8afa2fb0267812e8c99545acdcd9492826642853c76d57082a510892f4dbd073d5766f4ef2e6dbb0742550e359a8e30bc7fb3d9805d4a48</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">您好, 这里需要密码.</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">
+        </div>
+        
+            <div class="kratos-copyright text-center clearfix">
+                <h5>本作品采用 <a rel="license nofollow" target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh">知识共享署名-相同方式共享 4.0 国际许可协议</a> 进行许可</h5>
+            </div>
+        
+        <footer class="kratos-entry-footer clearfix">
+            
+                <div class="post-like-donate text-center clearfix" id="post-like-donate">
+                
+                
+                    <a class="share" href="javascript:;"><i class="fa fa-share-alt"></i> 分享</a>
+                    <div class="share-wrap" style="display: none;">
+    <div class="share-group">
+        <a href="javascript:;" class="share-plain qq" onclick="share('qq');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-qq"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain qzone" onclick="share('qzone');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-star"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain weixin pop style-plain" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-weixin"></i>
+            </div>
+            <div class="share-int">
+                <div class="qrcode" id="wechat-qr"></div>
+                <p>打开微信“扫一扫”，打开网页后点击屏幕右上角分享按钮</p>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain weibo" onclick="share('weibo');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-weibo"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain facebook style-plain" onclick="share('facebook');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-facebook"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain twitter style-plain" onclick="share('twitter');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-twitter"></i>
+            </div>
+        </a>
+    </div>
+    <script type="text/javascript">
+        $(()=>{
+            new QRCode("wechat-qr", {
+                text: "https://www.iflu.cf/2021/07/08/EUserv-free-VPS-install-V2ray-WS-TLS-Cloudflare/",
+                width: 150,
+                height: 150,
+                correctLevel : QRCode.CorrectLevel.H
+            });
+        });
+        function share(dest) {
+            const qqBase        = "https://connect.qq.com/widget/shareqq/index.html?";
+            const weiboBase     = "https://service.weibo.com/share/share.php?";
+            const qzoneBase     = "https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?";
+            const facebookBase  = "https://www.facebook.com/sharer/sharer.php?";
+            const twitterBase   = "https://twitter.com/intent/tweet?";
+            const hostUrl       = "https://www.iflu.cf/2021/07/08/EUserv-free-VPS-install-V2ray-WS-TLS-Cloudflare/";
+            const title         = "「EUserv免费VPS配置V2ray+WS+TLS+Cloudflare科学上网」";
+            const excerpt       = `有东西被加密了, 请输入密码查看.`;
+            let _URL;
+            switch (dest) {
+                case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
+                case "weibo"    : _URL = weiboBase+"url="+hostUrl+"&title="+title+excerpt;                                 break;
+                case "qzone"    : _URL = qzoneBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";  break;
+                case "facebook" : _URL = facebookBase+"u="+hostUrl;                                                        break;
+                case "twitter"  : _URL = twitterBase+"text="+title+excerpt+"&url="+hostUrl;                                break;
+            }
+            window.open(_URL);
+        };
+    </script>
+</div>
+                
+                </div>
+            
+            <div class="footer-tag clearfix">
+                <div class="pull-left">
+                <i class="fa fa-tags"></i>
+                    <a class="tag-none-link" href="/tags/V2ray/" rel="tag">V2ray</a>, <a class="tag-none-link" href="/tags/%E5%85%8D%E8%B4%B9VPS/" rel="tag">免费VPS</a>, <a class="tag-none-link" href="/tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/" rel="tag">科学上网</a>
+                </div>
+                <div class="pull-date">
+                <span>最后编辑：2021-08-13</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+        <nav class="navigation post-navigation clearfix" role="navigation">
+            
+            <div class="nav-previous clearfix">
+                <a title=" Ubuntu搭建我的世界基岩版" href="/2021/07/05/Ubuntu-create-Minecraft-Bedrock-Edition/">&lt; 上一篇</a>
+            </div>
+            
+            
+            <div class="nav-next clearfix">
+                <a title=" 运用闲置小鸡+Cloudreve+Cloudflare Workers反代+OneDrive搭建网盘" href="/2021/07/29/vps-Cloudreve-Cloudflare-Workers-OneDrive-create-pan/">下一篇 &gt;</a>
+            </div>
+            
+        </nav>
+    
+    
+        <div id="w-comments" class="post-comments"></div>
+<script>
+    var load_comm = () => {
+        const init = () => {
+            new Waline(Object.assign({
+                el: '#w-comments',
+                path: '/2021/07/08/EUserv-free-VPS-install-V2ray-WS-TLS-Cloudflare/'
+            }, JSON.parse('{"serverURL":"https://comment.iflu.cf/","visitor":true}')));
+        }
+        if (typeof Waline == 'undefined') {
+            const src = 'https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js';
+            $.getScript(src, init);
+        } else {
+            init();
+        }
+    };
+</script>
+<noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="https://waline.js.org/">comments powered by Waline.</a></noscript>
+
+    
+</article>
+
+        
+
+            </section>
+
+        
+
+                
+            
+
+<section id="kratos-widget-area" class="col-md-4 hidden-xs hidden-sm">
+    <!-- 文章和页面根据splitter来分割，没有的话就从头开始设置为sticky -->
+    
+    
+                <aside id="krw-about" class="widget widget-kratos-about clearfix">
+    <div class="photo-background"></div>
+    <div class="photo-wrapper clearfix">
+        <div class="photo-wrapper-tip text-center">
+            <img class="about-photo" src="http://q1.qlogo.cn/g?b=qq&amp;nk=1959947572&amp;s=640" />
+        </div>
+    </div>
+    <div class="textwidget">
+        <p class="text-center">多点自知之明，少点自作多情。</p>
+    </div>
+</aside>
+            
+                    <div class="sticky-area">
+                
+                
+  <aside id="krw-categories" class="widget widget-kratos-categories clearfix">
+    <h4 class="widget-title"><i class="fa fa-folder"></i>分类目录</h4>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%9C%A8%E7%BA%BF%E9%BC%93%E6%8D%A3/">在线鼓捣</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%9C%A8%E7%BA%BF%E9%BC%93%E6%8D%A3/Linux/">Linux</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%9C%A8%E7%BA%BF%E9%BC%93%E6%8D%A3/VPS/">VPS</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BA%94%E7%94%A8%E6%8E%A8%E8%8D%90/">应用推荐</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%9F%E6%B4%BB%E6%83%85%E6%84%9F/">生活情感</a><span class="category-list-count">1</span></li></ul>
+  </aside>
+
+
+            
+                
+  <aside id="krw-tags" class="widget widget-kratos-tags clearfix">
+    <h4 class="widget-title"><i class="fa fa-tags"></i>标签聚合</h4>
+      <div class="tag-clouds">
+        <a href="/tags/Cloudflare/" style="font-size: 0.6em;">Cloudflare</a> <a href="/tags/FL-Studio/" style="font-size: 0.6em;">FL Studio</a> <a href="/tags/Linux/" style="font-size: 0.8em;">Linux</a> <a href="/tags/OneDrive/" style="font-size: 0.6em;">OneDrive</a> <a href="/tags/Telegram/" style="font-size: 0.6em;">Telegram</a> <a href="/tags/V2ray/" style="font-size: 0.6em;">V2ray</a> <a href="/tags/appnode/" style="font-size: 0.6em;">appnode</a> <a href="/tags/php/" style="font-size: 0.6em;">php</a> <a href="/tags/%E5%85%8D%E8%B4%B9VPS/" style="font-size: 0.6em;">免费VPS</a> <a href="/tags/%E5%A5%A5%E8%BF%90%E4%BC%9A/" style="font-size: 0.6em;">奥运会</a> <a href="/tags/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C/" style="font-size: 0.6em;">我的世界</a> <a href="/tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/" style="font-size: 0.6em;">科学上网</a> <a href="/tags/%E7%BC%96%E6%9B%B2/" style="font-size: 0.6em;">编曲</a>
+      </div>
+  </aside>
+
+            
+                
+  <aside id="krw-posts" class="widget widget-kratos-posts">
+  <h4 class="widget-title"><i class="fa fa-file"></i>最新文章</h4>
+  <div class="tab-content">
+      <ul class="list-group">
+        
+        
+          
+          
+            <a class="list-group-item" href="/2021/08/13/5-replace-fl-studio/"><i class="fa  fa-book"></i> 5个在Linux中代替FL Studio的编曲软件</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2021/07/29/rubbish-Japan-olympics-no-olympics-spirit-but-have-anti-Japanese-spirit/"><i class="fa  fa-book"></i> 日本阴间奥运会骚操作！奥林匹克精神没见到，抗日精神倒是给我唤醒了！</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2021/07/29/vps-Cloudreve-Cloudflare-Workers-OneDrive-create-pan/"><i class="fa  fa-book"></i> 运用闲置小鸡+Cloudreve+Cloudflare Workers反代+OneDrive搭建网盘</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2021/07/08/EUserv-free-VPS-install-V2ray-WS-TLS-Cloudflare/"><i class="fa  fa-book"></i> EUserv免费VPS配置V2ray+WS+TLS+Cloudflare科学上网</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/2021/07/05/Ubuntu-create-Minecraft-Bedrock-Edition/"><i class="fa  fa-book"></i> Ubuntu搭建我的世界基岩版</a>
+            
+          
+        
+          
+            
+          
+            
+      </ul>
+  </div>
+  </aside>
+
+            
+    </div>
+</section>
+        
+        </div>
+    </div>
+</div>
+<footer>
+    <div id="footer"  class="ap-lrc"  >
+        <div class="kr-tool text-center">
+            <div class="tool">
+                
+                    <div class="box search-box">
+                        <a href="/search/">
+                            <span class="fa fa-search"></span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="box theme-box" id="darkmode-switch">
+                        <span class="fa fa-adjust"></span>
+                    </div>
+                
+                
+            </div>
+            <div class="box gotop-box">
+                <span class="fa fa-chevron-up"></span>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 footer-list text-center">
+                    <ul class="kratos-social-icons">
+                        
+                        
+                        <li><a target="_blank" rel="nofollow" href="https://t.me/iIofm"><i class="fa fa-telegram"></i></a></li>
+                        <li><a target="_blank" rel="nofollow" href="https://twitter.com/IFLU10"><i class="fa fa-twitter"></i></a></li>
+                        
+                        
+                        
+                        <li><a target="_blank" rel="nofollow" href="https://github.com/DaoChen6"><i class="fa fa-github"></i></a></li>
+                        
+                    </ul>
+                    <ul class="kratos-copyright">
+                        <div>
+                            <li>&copy; 2021 辰漉博客 版权所有.</li>
+                            <li>本站已运行<span id="span_dt">Loading...</span></li>
+                        </div>
+                        <div>
+                            <li>Theme <a href="https://github.com/Candinya/Kratos-Rebirth" target="_blank">Kratos:Rebirth</a></li>
+                            <li>Site built with&nbsp;<i class="fa fa-heart throb" style="color:#d43f57"></i>&nbsp;by 道辰.</li>
+                        </div>
+                        <div>
+                            <li>Powered by <a href="https://hexo.io" target="_blank" rel="nofollow">Hexo</a></li>
+                            <li>Hosted on <!--a href="https://github.io" target="_blank">Github Pages</a--></li>
+                        </div>
+                        <div>
+                            
+                            
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
+</div>
+
+        <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.4/dist/js/bootstrap.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.js"></script>
+<script>const notMobile = (!(navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)));</script>
+
+
+    <script async src="/js/candy.min.js"></script>
+
+
+
+    <script defer src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+    <meting-js
+        server="netease"
+        type="playlist"
+        id="6842336127"
+        order="random"
+        fixed="true"
+    >
+    </meting-js>
+
+
+
+    <script defer src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
+<script defer src="/js/kratosr.min.js"></script>
+<script defer src="/js/pjax.min.js"></script>
+
+
+    <script defer src="/js/kr-dark.min.js"></script>
+
+<script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1280078308'%3E%3C/span%3E%3Cscript src='https://s4.cnzz.com/z_stat.php%3Fid%3D1280078308%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+
+<!-- Extra support for third-party plguins  -->
+
+
+    </body>
+</html>
