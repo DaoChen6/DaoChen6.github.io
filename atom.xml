@@ -6,7 +6,7 @@
   <link href="https://www.ifts.ml/atom.xml" rel="self"/>
   
   <link href="https://www.ifts.ml/"/>
-  <updated>2022-04-10T07:28:43.212Z</updated>
+  <updated>2022-05-09T15:37:43.632Z</updated>
   <id>https://www.ifts.ml/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Cloudflare Workers添加自定义域名</title>
+    <link href="https://www.ifts.ml/posts/Cloudflare-Workers-Add-domain-name/"/>
+    <id>https://www.ifts.ml/posts/Cloudflare-Workers-Add-domain-name/</id>
+    <published>2022-05-09T15:25:05.000Z</published>
+    <updated>2022-05-09T15:37:43.632Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;介于5月8日晚CloudFlare Workers 的业务域名 Workers.dev 被防火长城 DNS 污染。&lt;/p&gt;
+&lt;p&gt;故而教一下如何在Cloudflare</summary>
+        
+      
+    
+    
+    
+    <category term="在线鼓捣" scheme="https://www.ifts.ml/categories/%E5%9C%A8%E7%BA%BF%E9%BC%93%E6%8D%A3/"/>
+    
+    <category term="Web" scheme="https://www.ifts.ml/categories/%E5%9C%A8%E7%BA%BF%E9%BC%93%E6%8D%A3/Web/"/>
+    
+    
+    <category term="Cloudflare" scheme="https://www.ifts.ml/tags/Cloudflare/"/>
+    
+    <category term="Workers" scheme="https://www.ifts.ml/tags/Workers/"/>
+    
+  </entry>
   
   <entry>
     <title>WHMCS NGINX伪静态规则</title>
@@ -591,37 +622,6 @@
     <category term="Linux" scheme="https://www.ifts.ml/tags/Linux/"/>
     
     <category term="我的世界" scheme="https://www.ifts.ml/tags/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>debian10安装Telegram</title>
-    <link href="https://www.ifts.ml/posts/debian10-install-Telegram/"/>
-    <id>https://www.ifts.ml/posts/debian10-install-Telegram/</id>
-    <published>2021-07-05T09:35:31.000Z</published>
-    <updated>2022-03-10T07:31:08.492Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;今天又是闲的蛋疼的一天，突发奇想拿出来一台白嫖来的机子挂电报，上了电报官网看了下Linux有三种安装方式：Tarball、Flatpak、Snap&lt;/p&gt;
-&lt;p&gt;但我这次用Flatpak方式，Tarball不想用，因为一堆错误，别问我怎么知道的&lt;/p&gt;
-&lt;h2</summary>
-        
-      
-    
-    
-    
-    <category term="在线鼓捣" scheme="https://www.ifts.ml/categories/%E5%9C%A8%E7%BA%BF%E9%BC%93%E6%8D%A3/"/>
-    
-    <category term="Linux" scheme="https://www.ifts.ml/categories/%E5%9C%A8%E7%BA%BF%E9%BC%93%E6%8D%A3/Linux/"/>
-    
-    
-    <category term="Linux" scheme="https://www.ifts.ml/tags/Linux/"/>
-    
-    <category term="Telegram" scheme="https://www.ifts.ml/tags/Telegram/"/>
     
   </entry>
   

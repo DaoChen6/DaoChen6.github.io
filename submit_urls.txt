@@ -1,3 +1,4 @@
+https://www.ifts.ml/posts/Cloudflare-Workers-Add-domain-name/
 https://www.ifts.ml/posts/Use-CloudFlare-for-SaaS-to-achieve-CNAME-access/
 https://www.ifts.ml/posts/WHMCS-NGINX-Rewrite/
 https://www.ifts.ml/posts/ban-DataForSeoBot/
@@ -7,4 +8,3 @@ https://www.ifts.ml/posts/cf-blog-set-logo/
 https://www.ifts.ml/posts/Cloudflare-firewall-rules-are-finally-in-place/
 https://www.ifts.ml/posts/lingdong-n270-ikuai-ruanluyou-in-2021-8-29/
 https://www.ifts.ml/posts/cf-blog-basic-build-tutorial/
-https://www.ifts.ml/posts/top-5-icon-packs-for-web-apps-in-2021/
