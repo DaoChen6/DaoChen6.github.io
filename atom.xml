@@ -6,7 +6,7 @@
   <link href="https://www.ifts.ml/atom.xml" rel="self"/>
   
   <link href="https://www.ifts.ml/"/>
-  <updated>2022-05-11T13:44:29.373Z</updated>
+  <updated>2022-05-11T14:03:20.396Z</updated>
   <id>https://www.ifts.ml/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Cloudflare Workers添加自定义域名</title>
+    <title>Cloudflare Workers添加自定义域名和修改Heroku节点</title>
     <link href="https://www.ifts.ml/posts/Cloudflare-Workers-Add-domain-name/"/>
     <id>https://www.ifts.ml/posts/Cloudflare-Workers-Add-domain-name/</id>
     <published>2022-05-09T15:25:05.000Z</published>
-    <updated>2022-05-11T13:44:29.373Z</updated>
+    <updated>2022-05-11T14:03:20.396Z</updated>
     
     
       
