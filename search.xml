@@ -8,7 +8,7 @@
       <link href="/posts/Cloudflare-Workers-Add-domain-name/"/>
       <url>/posts/Cloudflare-Workers-Add-domain-name/</url>
       
-        <content type="html"><![CDATA[<blockquote><p>介于5月8日晚CloudFlare Workers 的业务域名 Workers.dev 被防火长城 DNS 污染。</p><p>故而教一下如何在Cloudflare Workers添加自定义域名</p></blockquote><hr><h3 id="1）"><a href="#1）" class="headerlink" title="1）"></a>1）</h3><p>在Cloudflare中添加自己的域名</p><p>（这一步不做赘述）</p><h3 id="2）"><a href="#2）" class="headerlink" title="2）"></a>2）</h3><p>​    打开Workers里你的应用，选择<code>触发器</code>选项，点击<code>添加路由</code></p><p><img src="https://pic.imgdb.cn/item/6279340c09475431291c8c9b.jpg"></p><p>​    区域选择<code>你在Cloudflare托管的域名</code>，路由填写域名<code>前缀.你的域名/*</code><img src="https://pic.imgdb.cn/item/6279348809475431291ddb8a.jpg"></p><p>​    最后添加路由，即可通过<code>前缀.你的域名</code>访问你的项目</p>]]></content>
+        <content type="html"><![CDATA[<blockquote><p>介于5月8日晚CloudFlare Workers 的业务域名 Workers.dev 被防火长城 DNS 污染。</p><p>故而教一下如何在Cloudflare Workers添加自定义域名</p><p>欢迎加入Telegram群聊讨论<a href="https://t.me/iflugp">https://t.me/iflugp</a></p></blockquote><hr><h3 id="1）"><a href="#1）" class="headerlink" title="1）"></a>1）</h3><p>在Cloudflare中添加自己的域名</p><p>（这一步不做赘述）</p><h3 id="2）"><a href="#2）" class="headerlink" title="2）"></a>2）</h3><p>​    打开Workers里你的应用，选择<code>触发器</code>选项，点击<code>添加路由</code></p><p><img src="https://pic.imgdb.cn/item/6279340c09475431291c8c9b.jpg"></p><p>​    区域选择<code>你在Cloudflare托管的域名</code>，路由填写域名<code>前缀.你的域名/*</code><img src="https://pic.imgdb.cn/item/6279348809475431291ddb8a.jpg"></p><p>​    最后添加路由，即可通过<code>前缀.你的域名</code>访问你的项目</p>]]></content>
       
       
       <categories>
