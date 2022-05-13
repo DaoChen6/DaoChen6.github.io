@@ -1,5 +1,5 @@
-https://www.ifts.ml/posts/Cloudflare-Workers-Add-domain-name/
 https://www.ifts.ml/posts/Free-V2ray-Server-on-Heroku-in-2022/
+https://www.ifts.ml/posts/Cloudflare-Workers-Add-domain-name/
 https://www.ifts.ml/posts/Use-CloudFlare-for-SaaS-to-achieve-CNAME-access/
 https://www.ifts.ml/posts/WHMCS-NGINX-Rewrite/
 https://www.ifts.ml/posts/ban-DataForSeoBot/
