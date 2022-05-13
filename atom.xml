@@ -6,7 +6,7 @@
   <link href="https://www.ifts.ml/atom.xml" rel="self"/>
   
   <link href="https://www.ifts.ml/"/>
-  <updated>2022-05-11T14:03:20.396Z</updated>
+  <updated>2022-05-13T19:45:07.804Z</updated>
   <id>https://www.ifts.ml/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Cloudflare Workers添加自定义域名和修改Heroku节点</title>
+    <title>Cloudflare Workers添加自定义域名和Heroku节点配置</title>
     <link href="https://www.ifts.ml/posts/Cloudflare-Workers-Add-domain-name/"/>
     <id>https://www.ifts.ml/posts/Cloudflare-Workers-Add-domain-name/</id>
-    <published>2022-05-09T15:25:05.000Z</published>
-    <updated>2022-05-11T14:03:20.396Z</updated>
+    <published>2022-05-13T17:07:05.000Z</published>
+    <updated>2022-05-13T19:45:07.804Z</updated>
     
     
       
@@ -30,7 +30,7 @@
         
     <summary type="html">&lt;blockquote&gt;
 &lt;p&gt;介于5月8日晚CloudFlare Workers 的业务域名 Workers.dev 被防火长城 DNS 污染。&lt;/p&gt;
-&lt;p&gt;故而教一下如何在Cloudflare</summary>
+&lt;p&gt;教下Cloudflare</summary>
         
       
     
@@ -44,6 +44,44 @@
     <category term="Cloudflare" scheme="https://www.ifts.ml/tags/Cloudflare/"/>
     
     <category term="Workers" scheme="https://www.ifts.ml/tags/Workers/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2022年最新版Heroku部署V2ray节点教程（保姆级） Free V2ray Server on Heroku in 2022</title>
+    <link href="https://www.ifts.ml/posts/Free-V2ray-Server-on-Heroku-in-2022/"/>
+    <id>https://www.ifts.ml/posts/Free-V2ray-Server-on-Heroku-in-2022/</id>
+    <published>2022-05-13T17:07:05.000Z</published>
+    <updated>2022-05-13T19:42:24.743Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;介于5月8日晚CloudFlare Workers 的业务域名 Workers.dev 被防火长城 DNS 污染。&lt;/p&gt;
+&lt;p&gt;以及群友呼应&lt;/p&gt;
+&lt;p&gt;教下2022年最新版Heroku部署V2ray节点教程 Free V2ray</summary>
+        
+      
+    
+    
+    
+    <category term="在线鼓捣" scheme="https://www.ifts.ml/categories/%E5%9C%A8%E7%BA%BF%E9%BC%93%E6%8D%A3/"/>
+    
+    <category term="Web" scheme="https://www.ifts.ml/categories/%E5%9C%A8%E7%BA%BF%E9%BC%93%E6%8D%A3/Web/"/>
+    
+    
+    <category term="Cloudflare" scheme="https://www.ifts.ml/tags/Cloudflare/"/>
+    
+    <category term="Workers" scheme="https://www.ifts.ml/tags/Workers/"/>
+    
+    <category term="Freenom" scheme="https://www.ifts.ml/tags/Freenom/"/>
+    
+    <category term="v2ray" scheme="https://www.ifts.ml/tags/v2ray/"/>
+    
+    <category term="Heroku" scheme="https://www.ifts.ml/tags/Heroku/"/>
     
   </entry>
   
@@ -590,38 +628,6 @@
     <category term="V2ray" scheme="https://www.ifts.ml/tags/V2ray/"/>
     
     <category term="免费VPS" scheme="https://www.ifts.ml/tags/%E5%85%8D%E8%B4%B9VPS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Ubuntu搭建我的世界基岩版</title>
-    <link href="https://www.ifts.ml/posts/Ubuntu-create-Minecraft-Bedrock-Edition/"/>
-    <id>https://www.ifts.ml/posts/Ubuntu-create-Minecraft-Bedrock-Edition/</id>
-    <published>2021-07-05T11:14:22.000Z</published>
-    <updated>2022-03-10T07:31:08.546Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;前言：群里一个大憨憨在搭建我的世界基岩版，一堆错误。所以让他扔给我机子搭建。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&quot;1、安装必要工具&quot;&gt;&lt;a href=&quot;#1、安装必要工具&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="在线鼓捣" scheme="https://www.ifts.ml/categories/%E5%9C%A8%E7%BA%BF%E9%BC%93%E6%8D%A3/"/>
-    
-    <category term="Linux" scheme="https://www.ifts.ml/categories/%E5%9C%A8%E7%BA%BF%E9%BC%93%E6%8D%A3/Linux/"/>
-    
-    
-    <category term="Linux" scheme="https://www.ifts.ml/tags/Linux/"/>
-    
-    <category term="我的世界" scheme="https://www.ifts.ml/tags/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C/"/>
     
   </entry>
   
