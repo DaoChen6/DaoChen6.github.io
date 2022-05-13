@@ -4,35 +4,6 @@
   
     
     <entry>
-      <title>Cloudflare Workers添加自定义域名和Heroku节点配置</title>
-      <link href="/posts/Cloudflare-Workers-Add-domain-name/"/>
-      <url>/posts/Cloudflare-Workers-Add-domain-name/</url>
-      
-        <content type="html"><![CDATA[<blockquote><p>介于5月8日晚CloudFlare Workers 的业务域名 Workers.dev 被防火长城 DNS 污染。</p><p>教下Cloudflare Workers添加自定义域名和Heroku节点配置</p><p>欢迎加入Telegram群聊讨论<a href="https://t.me/iflugp">https://t.me/iflugp</a></p></blockquote><hr><h3 id="添加域名"><a href="#添加域名" class="headerlink" title="添加域名"></a>添加域名</h3><p>在Cloudflare中添加自己的域名</p><p>（不做赘述）</p><h3 id="添加自定义域名"><a href="#添加自定义域名" class="headerlink" title="添加自定义域名"></a>添加自定义域名</h3><p>​    打开Workers里你的应用，选择<code>触发器</code>选项，点击<code>添加路由</code></p><p><img src="https://pic.imgdb.cn/item/6279340c09475431291c8c9b.jpg"></p><p>​    区域选择<code>你在Cloudflare托管的域名</code>，路由填写域名<code>xxx（前缀）.xxxx（域名）/*</code></p><p><img src="https://pic.imgdb.cn/item/627bc10809475431295823be.jpg"></p><p>​    最后添加路由，即可通过<code>xxx（前缀）.xxxx（域名）</code>访问你的项目</p><hr><h3 id="配置VMess节点"><a href="#配置VMess节点" class="headerlink" title="配置VMess节点"></a>配置VMess节点</h3><p><code>地址</code>&#x3D;<code>cloudflare优选IP或者域名</code></p><p><code>伪装域名(Host)</code>&#x3D;<code>自定义域名(xxx.xxxx.xx)</code></p><p><code>SNI</code>&#x3D;<code>自定义域名(xxx.xxxx.xx)</code></p><p><img src="https://pic.imgdb.cn/item/627bc194094754312959d4c7.jpg"></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 在线鼓捣 </category>
-          
-          <category> Web </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Cloudflare </tag>
-            
-            <tag> Workers </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>2022年最新版Heroku部署V2ray节点教程（保姆级） Free V2ray Server on Heroku in 2022</title>
       <link href="/posts/Free-V2ray-Server-on-Heroku-in-2022/"/>
       <url>/posts/Free-V2ray-Server-on-Heroku-in-2022/</url>
@@ -60,6 +31,35 @@
             <tag> v2ray </tag>
             
             <tag> Heroku </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Cloudflare Workers添加自定义域名和Heroku节点配置</title>
+      <link href="/posts/Cloudflare-Workers-Add-domain-name/"/>
+      <url>/posts/Cloudflare-Workers-Add-domain-name/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>介于5月8日晚CloudFlare Workers 的业务域名 Workers.dev 被防火长城 DNS 污染。</p><p>教下Cloudflare Workers添加自定义域名和Heroku节点配置</p><p>欢迎加入Telegram群聊讨论<a href="https://t.me/iflugp">https://t.me/iflugp</a></p></blockquote><hr><h3 id="添加域名"><a href="#添加域名" class="headerlink" title="添加域名"></a>添加域名</h3><p>在Cloudflare中添加自己的域名</p><p>（不做赘述）</p><h3 id="添加自定义域名"><a href="#添加自定义域名" class="headerlink" title="添加自定义域名"></a>添加自定义域名</h3><p>​    打开Workers里你的应用，选择<code>触发器</code>选项，点击<code>添加路由</code></p><p><img src="https://pic.imgdb.cn/item/6279340c09475431291c8c9b.jpg"></p><p>​    区域选择<code>你在Cloudflare托管的域名</code>，路由填写域名<code>xxx（前缀）.xxxx（域名）/*</code></p><p><img src="https://pic.imgdb.cn/item/627bc10809475431295823be.jpg"></p><p>​    最后添加路由，即可通过<code>xxx（前缀）.xxxx（域名）</code>访问你的项目</p><hr><h3 id="配置VMess节点"><a href="#配置VMess节点" class="headerlink" title="配置VMess节点"></a>配置VMess节点</h3><p><code>地址</code>&#x3D;<code>cloudflare优选IP或者域名</code></p><p><code>伪装域名(Host)</code>&#x3D;<code>自定义域名(xxx.xxxx.xx)</code></p><p><code>SNI</code>&#x3D;<code>自定义域名(xxx.xxxx.xx)</code></p><p><img src="https://pic.imgdb.cn/item/627bc194094754312959d4c7.jpg"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 在线鼓捣 </category>
+          
+          <category> Web </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Cloudflare </tag>
+            
+            <tag> Workers </tag>
             
         </tags>
       

@@ -6,7 +6,7 @@
   <link href="https://www.ifts.ml/atom.xml" rel="self"/>
   
   <link href="https://www.ifts.ml/"/>
-  <updated>2022-05-13T19:45:07.804Z</updated>
+  <updated>2022-05-13T19:42:24.743Z</updated>
   <id>https://www.ifts.ml/</id>
   
   <author>
@@ -15,37 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>Cloudflare Workers添加自定义域名和Heroku节点配置</title>
-    <link href="https://www.ifts.ml/posts/Cloudflare-Workers-Add-domain-name/"/>
-    <id>https://www.ifts.ml/posts/Cloudflare-Workers-Add-domain-name/</id>
-    <published>2022-05-13T17:07:05.000Z</published>
-    <updated>2022-05-13T19:45:07.804Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;介于5月8日晚CloudFlare Workers 的业务域名 Workers.dev 被防火长城 DNS 污染。&lt;/p&gt;
-&lt;p&gt;教下Cloudflare</summary>
-        
-      
-    
-    
-    
-    <category term="在线鼓捣" scheme="https://www.ifts.ml/categories/%E5%9C%A8%E7%BA%BF%E9%BC%93%E6%8D%A3/"/>
-    
-    <category term="Web" scheme="https://www.ifts.ml/categories/%E5%9C%A8%E7%BA%BF%E9%BC%93%E6%8D%A3/Web/"/>
-    
-    
-    <category term="Cloudflare" scheme="https://www.ifts.ml/tags/Cloudflare/"/>
-    
-    <category term="Workers" scheme="https://www.ifts.ml/tags/Workers/"/>
-    
-  </entry>
   
   <entry>
     <title>2022年最新版Heroku部署V2ray节点教程（保姆级） Free V2ray Server on Heroku in 2022</title>
@@ -82,6 +51,37 @@
     <category term="v2ray" scheme="https://www.ifts.ml/tags/v2ray/"/>
     
     <category term="Heroku" scheme="https://www.ifts.ml/tags/Heroku/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Cloudflare Workers添加自定义域名和Heroku节点配置</title>
+    <link href="https://www.ifts.ml/posts/Cloudflare-Workers-Add-domain-name/"/>
+    <id>https://www.ifts.ml/posts/Cloudflare-Workers-Add-domain-name/</id>
+    <published>2022-05-06T17:07:05.000Z</published>
+    <updated>2022-05-13T19:47:08.216Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;介于5月8日晚CloudFlare Workers 的业务域名 Workers.dev 被防火长城 DNS 污染。&lt;/p&gt;
+&lt;p&gt;教下Cloudflare</summary>
+        
+      
+    
+    
+    
+    <category term="在线鼓捣" scheme="https://www.ifts.ml/categories/%E5%9C%A8%E7%BA%BF%E9%BC%93%E6%8D%A3/"/>
+    
+    <category term="Web" scheme="https://www.ifts.ml/categories/%E5%9C%A8%E7%BA%BF%E9%BC%93%E6%8D%A3/Web/"/>
+    
+    
+    <category term="Cloudflare" scheme="https://www.ifts.ml/tags/Cloudflare/"/>
+    
+    <category term="Workers" scheme="https://www.ifts.ml/tags/Workers/"/>
     
   </entry>
   
