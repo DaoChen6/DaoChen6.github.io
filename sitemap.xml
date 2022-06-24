@@ -1,40 +1,622 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  {% for post in posts %}
+  
   <url>
-    <loc>{{ post.permalink | uriencode }}</loc>
-    {% if post.updated %}
-    <lastmod>{{ post.updated | formatDate }}</lastmod>
-    {% elif post.date %}
-    <lastmod>{{ post.date | formatDate }}</lastmod>
-    {% endif %}
+    <loc>https://www.ifts.ml/posts/Free-V2ray-Server-on-Heroku-in-2022/</loc>
+    
+    <lastmod>2022-05-13</lastmod>
+    
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-  {% endfor %}
+  
+  <url>
+    <loc>https://www.ifts.ml/posts/Cloudflare-Workers-Add-domain-name/</loc>
+    
+    <lastmod>2022-05-13</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/about/index.html</loc>
+    
+    <lastmod>2022-05-11</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/posts/Use-CloudFlare-for-SaaS-to-achieve-CNAME-access/</loc>
+    
+    <lastmod>2022-04-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/posts/WHMCS-NGINX-Rewrite/</loc>
+    
+    <lastmod>2022-04-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/posts/ban-DataForSeoBot/</loc>
+    
+    <lastmod>2022-03-23</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/posts/change-the-theme-of-the-new-revision/</loc>
+    
+    <lastmod>2022-03-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/posts/Double-gigabit-n270-board-toss-follow-up/</loc>
+    
+    <lastmod>2022-03-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/posts/cf-blog-set-logo/</loc>
+    
+    <lastmod>2022-03-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/posts/Cloudflare-firewall-rules-are-finally-in-place/</loc>
+    
+    <lastmod>2022-03-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/posts/lingdong-n270-ikuai-ruanluyou-in-2021-8-29/</loc>
+    
+    <lastmod>2022-03-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/posts/cf-blog-basic-build-tutorial/</loc>
+    
+    <lastmod>2022-03-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/posts/top-5-icon-packs-for-web-apps-in-2021/</loc>
+    
+    <lastmod>2022-03-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/posts/edge-browser-and-mandatory-advertising-after-afternoon-in-20210824/</loc>
+    
+    <lastmod>2022-03-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/categories/index.html</loc>
+    
+    <lastmod>2022-03-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/link/index.html</loc>
+    
+    <lastmod>2022-03-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/tags/index.html</loc>
+    
+    <lastmod>2022-03-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/posts/vsftpd-directory-limit-chroot-user-isolation-500-error/</loc>
+    
+    <lastmod>2022-03-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/posts/vps-Cloudreve-Cloudflare-Workers-OneDrive-create-pan/</loc>
+    
+    <lastmod>2022-03-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/posts/Ubuntu-create-Minecraft-Bedrock-Edition/</loc>
+    
+    <lastmod>2022-03-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/posts/rubbish-Japan-olympics-no-olympics-spirit-but-have-anti-Japanese-spirit/</loc>
+    
+    <lastmod>2022-03-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/posts/Postfix-opens-SASL-cannot-find-service/</loc>
+    
+    <lastmod>2022-03-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/posts/install-Appnode-Panel-use-php-bash-php-command-not-found-problem-solution/</loc>
+    
+    <lastmod>2022-03-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/posts/EUserv-free-VPS-install-V2ray-WS-TLS-Cloudflare/</loc>
+    
+    <lastmod>2022-03-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/posts/debian10-install-Telegram/</loc>
+    
+    <lastmod>2022-03-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/posts/alist-bulid-and-caddy-bulid-shell/</loc>
+    
+    <lastmod>2022-03-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/posts/5-replace-fl-studio/</loc>
+    
+    <lastmod>2022-03-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
 
   <url>
-    <loc>{{ config.url | uriencode }}</loc>
-    <lastmod>{{ sNow | formatDate }}</lastmod>
+    <loc>https://www.ifts.ml/</loc>
+    <lastmod>2022-06-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
-  {% for tag in tags %}
+  
   <url>
-    <loc>{{ tag.permalink | uriencode }}</loc>
-    <lastmod>{{ sNow | formatDate }}</lastmod>
+    <loc>https://www.ifts.ml/tags/Cloudflare/</loc>
+    <lastmod>2022-06-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
-  {% endfor %}
+  
+  <url>
+    <loc>https://www.ifts.ml/tags/Workers/</loc>
+    <lastmod>2022-06-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/tags/%E7%BC%96%E6%9B%B2/</loc>
+    <lastmod>2022-06-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/tags/FL-Studio/</loc>
+    <lastmod>2022-06-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/tags/firewall/</loc>
+    <lastmod>2022-06-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/tags/%E8%BD%AF%E8%B7%AF%E7%94%B1/</loc>
+    <lastmod>2022-06-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/tags/OpenWrt/</loc>
+    <lastmod>2022-06-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/</loc>
+    <lastmod>2022-06-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/tags/V2ray/</loc>
+    <lastmod>2022-06-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/tags/%E5%85%8D%E8%B4%B9VPS/</loc>
+    <lastmod>2022-06-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/tags/Freenom/</loc>
+    <lastmod>2022-06-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/tags/v2ray/</loc>
+    <lastmod>2022-06-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/tags/Heroku/</loc>
+    <lastmod>2022-06-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/tags/Linux/</loc>
+    <lastmod>2022-06-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/tags/postfix/</loc>
+    <lastmod>2022-06-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/tags/SASL/</loc>
+    <lastmod>2022-06-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/tags/%E9%82%AE%E7%AE%B1%E6%9C%8D%E5%8A%A1/</loc>
+    <lastmod>2022-06-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/tags/CloudFlare/</loc>
+    <lastmod>2022-06-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/tags/Cname/</loc>
+    <lastmod>2022-06-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/tags/%E5%9F%9F%E5%90%8D/</loc>
+    <lastmod>2022-06-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/tags/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C/</loc>
+    <lastmod>2022-06-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/tags/Nginx/</loc>
+    <lastmod>2022-06-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/tags/WHMCS/</loc>
+    <lastmod>2022-06-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/tags/%E4%BC%AA%E9%9D%99%E6%80%81/</loc>
+    <lastmod>2022-06-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/tags/caddy/</loc>
+    <lastmod>2022-06-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/tags/shell/</loc>
+    <lastmod>2022-06-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/tags/%E7%BD%91%E7%9B%98%E6%8C%82%E8%BD%BD/</loc>
+    <lastmod>2022-06-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/tags/DataForSeoBot/</loc>
+    <lastmod>2022-06-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/tags/%E7%88%AC%E8%99%AB/</loc>
+    <lastmod>2022-06-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/tags/blog/</loc>
+    <lastmod>2022-06-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/tags/cloudflare/</loc>
+    <lastmod>2022-06-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/tags/Telegram/</loc>
+    <lastmod>2022-06-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/</loc>
+    <lastmod>2022-06-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/tags/appnode/</loc>
+    <lastmod>2022-06-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/tags/php/</loc>
+    <lastmod>2022-06-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/tags/%E7%88%B1%E5%BF%AB/</loc>
+    <lastmod>2022-06-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/tags/%E5%A5%A5%E8%BF%90%E4%BC%9A/</loc>
+    <lastmod>2022-06-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/tags/%E5%89%8D%E7%AB%AF/</loc>
+    <lastmod>2022-06-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/tags/%E5%9B%BE%E6%A0%87/</loc>
+    <lastmod>2022-06-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/tags/icon/</loc>
+    <lastmod>2022-06-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/tags/OneDrive/</loc>
+    <lastmod>2022-06-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/tags/vsftpd/</loc>
+    <lastmod>2022-06-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/tags/ftp/</loc>
+    <lastmod>2022-06-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
 
-  {% for cat in categories %}
+  
   <url>
-    <loc>{{ cat.permalink | uriencode }}</loc>
-    <lastmod>{{ sNow | formatDate }}</lastmod>
+    <loc>https://www.ifts.ml/categories/%E5%9C%A8%E7%BA%BF%E9%BC%93%E6%8D%A3/</loc>
+    <lastmod>2022-06-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
-  {% endfor %}
+  
+  <url>
+    <loc>https://www.ifts.ml/categories/%E5%BA%94%E7%94%A8%E6%8E%A8%E8%8D%90/</loc>
+    <lastmod>2022-06-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/categories/%E5%9C%A8%E7%BA%BF%E9%BC%93%E6%8D%A3/%E5%85%B6%E4%BB%96/</loc>
+    <lastmod>2022-06-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/categories/%E5%9C%A8%E7%BA%BF%E9%BC%93%E6%8D%A3/Web/</loc>
+    <lastmod>2022-06-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/categories/%E5%9C%A8%E7%BA%BF%E9%BC%93%E6%8D%A3/VPS/</loc>
+    <lastmod>2022-06-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/categories/%E5%9C%A8%E7%BA%BF%E9%BC%93%E6%8D%A3/Linux/</loc>
+    <lastmod>2022-06-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/categories/%E7%94%9F%E6%B4%BB%E6%83%85%E6%84%9F/</loc>
+    <lastmod>2022-06-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/categories/%E5%9C%A8%E7%BA%BF%E5%BC%80%E5%8F%91/</loc>
+    <lastmod>2022-06-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/categories/%E5%9C%A8%E7%BA%BF%E5%BC%80%E5%8F%91/%E5%89%8D%E7%AB%AF/</loc>
+    <lastmod>2022-06-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
 </urlset>
