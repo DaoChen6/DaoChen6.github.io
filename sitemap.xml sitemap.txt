@@ -254,6 +254,20 @@
 
   
   <url>
+    <loc>https://www.ifts.ml/tags/%E7%BC%96%E6%9B%B2/</loc>
+    <lastmod>2022-06-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/tags/FL-Studio/</loc>
+    <lastmod>2022-06-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://www.ifts.ml/tags/Cloudflare/</loc>
     <lastmod>2022-06-24</lastmod>
     <changefreq>weekly</changefreq>
@@ -269,20 +283,6 @@
   
   <url>
     <loc>https://www.ifts.ml/tags/firewall/</loc>
-    <lastmod>2022-06-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.ifts.ml/tags/%E7%BC%96%E6%9B%B2/</loc>
-    <lastmod>2022-06-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.ifts.ml/tags/FL-Studio/</loc>
     <lastmod>2022-06-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -324,35 +324,7 @@
   </url>
   
   <url>
-    <loc>https://www.ifts.ml/tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/</loc>
-    <lastmod>2022-06-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.ifts.ml/tags/V2ray/</loc>
-    <lastmod>2022-06-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.ifts.ml/tags/%E5%85%8D%E8%B4%B9VPS/</loc>
-    <lastmod>2022-06-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://www.ifts.ml/tags/Linux/</loc>
-    <lastmod>2022-06-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.ifts.ml/tags/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C/</loc>
     <lastmod>2022-06-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -380,21 +352,28 @@
   </url>
   
   <url>
-    <loc>https://www.ifts.ml/tags/Nginx/</loc>
+    <loc>https://www.ifts.ml/tags/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C/</loc>
     <lastmod>2022-06-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://www.ifts.ml/tags/WHMCS/</loc>
+    <loc>https://www.ifts.ml/tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/</loc>
     <lastmod>2022-06-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://www.ifts.ml/tags/%E4%BC%AA%E9%9D%99%E6%80%81/</loc>
+    <loc>https://www.ifts.ml/tags/V2ray/</loc>
+    <lastmod>2022-06-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/tags/%E5%85%8D%E8%B4%B9VPS/</loc>
     <lastmod>2022-06-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -416,6 +395,41 @@
   
   <url>
     <loc>https://www.ifts.ml/tags/%E5%9F%9F%E5%90%8D/</loc>
+    <lastmod>2022-06-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/tags/Nginx/</loc>
+    <lastmod>2022-06-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/tags/WHMCS/</loc>
+    <lastmod>2022-06-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/tags/%E4%BC%AA%E9%9D%99%E6%80%81/</loc>
+    <lastmod>2022-06-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/tags/DataForSeoBot/</loc>
+    <lastmod>2022-06-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/tags/%E7%88%AC%E8%99%AB/</loc>
     <lastmod>2022-06-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -457,14 +471,7 @@
   </url>
   
   <url>
-    <loc>https://www.ifts.ml/tags/DataForSeoBot/</loc>
-    <lastmod>2022-06-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.ifts.ml/tags/%E7%88%AC%E8%99%AB/</loc>
+    <loc>https://www.ifts.ml/tags/Telegram/</loc>
     <lastmod>2022-06-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -472,27 +479,6 @@
   
   <url>
     <loc>https://www.ifts.ml/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/</loc>
-    <lastmod>2022-06-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.ifts.ml/tags/appnode/</loc>
-    <lastmod>2022-06-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.ifts.ml/tags/php/</loc>
-    <lastmod>2022-06-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.ifts.ml/tags/Telegram/</loc>
     <lastmod>2022-06-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -507,6 +493,20 @@
   
   <url>
     <loc>https://www.ifts.ml/tags/%E5%A5%A5%E8%BF%90%E4%BC%9A/</loc>
+    <lastmod>2022-06-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/tags/appnode/</loc>
+    <lastmod>2022-06-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/tags/php/</loc>
     <lastmod>2022-06-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -534,13 +534,6 @@
   </url>
   
   <url>
-    <loc>https://www.ifts.ml/tags/OneDrive/</loc>
-    <lastmod>2022-06-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://www.ifts.ml/tags/vsftpd/</loc>
     <lastmod>2022-06-24</lastmod>
     <changefreq>weekly</changefreq>
@@ -554,14 +547,14 @@
     <priority>0.2</priority>
   </url>
   
-
-  
   <url>
-    <loc>https://www.ifts.ml/categories/%E5%9C%A8%E7%BA%BF%E9%BC%93%E6%8D%A3/</loc>
+    <loc>https://www.ifts.ml/tags/OneDrive/</loc>
     <lastmod>2022-06-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
+  
+
   
   <url>
     <loc>https://www.ifts.ml/categories/%E5%BA%94%E7%94%A8%E6%8E%A8%E8%8D%90/</loc>
@@ -571,7 +564,14 @@
   </url>
   
   <url>
-    <loc>https://www.ifts.ml/categories/%E5%9C%A8%E7%BA%BF%E9%BC%93%E6%8D%A3/%E5%85%B6%E4%BB%96/</loc>
+    <loc>https://www.ifts.ml/categories/%E5%9C%A8%E7%BA%BF%E9%BC%93%E6%8D%A3/</loc>
+    <lastmod>2022-06-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ifts.ml/categories/%E5%9C%A8%E7%BA%BF%E9%BC%93%E6%8D%A3/Linux/</loc>
     <lastmod>2022-06-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -592,7 +592,7 @@
   </url>
   
   <url>
-    <loc>https://www.ifts.ml/categories/%E5%9C%A8%E7%BA%BF%E9%BC%93%E6%8D%A3/Linux/</loc>
+    <loc>https://www.ifts.ml/categories/%E5%9C%A8%E7%BA%BF%E9%BC%93%E6%8D%A3/%E5%85%B6%E4%BB%96/</loc>
     <lastmod>2022-06-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
